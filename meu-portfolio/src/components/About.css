@@ -1,0 +1,282 @@
+.about-me-section {
+  padding: 100px 0 40px 0; /* Padding inferior reduzido */
+  width: 100%;
+}
+
+.about-me-island {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 80px 4%;
+  background-color: #F3F4F6;
+  border-radius: 48px;
+}
+
+.about-me-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* ====================================
+   About Cards
+   ==================================== */
+.about-card {
+  border-radius: 48px;
+  position: relative;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  will-change: transform, opacity; /* Otimizao para animaes fluidas */
+}
+
+.card-black {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 520px;
+  overflow: visible;
+}
+
+.card-white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ====================================
+   Black Card Content
+   ==================================== */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.header-left {
+  flex: 1; /* Permite que o lado esquerdo ocupe espao mas respeite o gap */
+}
+
+.header-right {
+  flex: 0 0 auto; /* Mantm a logo no tamanho certo e no canto */
+  text-align: right;
+}
+
+.card-top-title {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.8rem; /* Aumentado como solicitado */
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.card-top-sub {
+  font-family: var(--font-mono); /* Estética técnica */
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.card-logo-top {
+  height: 160px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(100%);
+  transform: translate(30px, -50px); /* Subindo mais 30px */
+}
+
+.portrait-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.portrait-popout {
+  height: 108%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  transform: translateX(65px); /* Puxando mais pra direita como solicitado */
+}
+
+.card-footer {
+  z-index: 10;
+  margin-top: auto;
+}
+
+.footer-quote-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.footer-main-quote {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  text-align: right;
+  margin: 0;
+  letter-spacing: -0.05em;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.get-in-touch-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff;
+  padding: 10px 24px; /* Tamanho reduzido como solicitado */
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-mono); /* Fonte tcnica mais "stylosa" */
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
+}
+
+.get-in-touch-btn:hover {
+  background-color: #ffffff; /* Preenchimento total no hover */
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+}
+
+.footer-nav-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 0.4;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+}
+
+/* ====================================
+   White Card Content
+   ==================================== */
+.about-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 40px; /* Igual foto */
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.section-title.small {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-family: var(--font-primary); /* Ajustado para Inter como solicitado */
+}
+
+.section-description {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--color-text-dark);
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 50px;
+  width: 100%;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.skill-name {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.skill-percent {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.skill-progress-bg {
+  width: 100%;
+  height: 10px; /* De 6px para 10px: Presena mais forte */
+  background-color: #F1F2F4;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background-color: #D2D4D7;
+  border-radius: 6px;
+}
+
+.skill-progress-bar.highlight {
+  background-color: #000000; /* Destaque em preto */
+}
+
+/* Responsividade Interna para manter o bento */
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .about-me-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-me-island { padding: 40px 20px; }
+  .about-card { padding: 30px; }
+  .section-title { font-size: 32px; }
+  .footer-main-quote { font-size: 1.2rem; }
+  .skill-logo-top { height: 100px; }
+}

@@ -1,0 +1,144 @@
+/* SEÇÃO DE PROJETOS E GRID */
+.projects-section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.badge-text {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.col-full {
+  grid-column: span 2;
+}
+
+.col-half {
+  grid-column: span 1;
+}
+
+@media (max-width: 800px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .col-half {
+    grid-column: span 1;
+  }
+  .col-full {
+    grid-column: span 1;
+  }
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--color-bg-alt);
+  cursor: pointer;
+}
+
+.col-half .project-image-wrapper {
+  aspect-ratio: 4/4; /* formato quadrado ou proximo disso para os splits */
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  transition: filter 0.5s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-image {
+  /* No fabriga template eles fazem a imagem ficar com menos exposição/desfocada levemente */
+  filter: brightness(0.7) blur(2px);
+}
+
+.overlay-content {
+  background-color: var(--color-text-light);
+  color: var(--color-text-dark);
+  padding: 14px 28px;
+  border-radius: 40px;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.view-case {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.project-info p {
+  font-family: var(--font-mono);
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+}

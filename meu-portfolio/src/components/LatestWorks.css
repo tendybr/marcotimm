@@ -1,0 +1,207 @@
+.latest-works {
+  display: flex;
+  flex-direction: column; /* Column para o título ficar em cima do split layout */
+  position: relative;
+  background-color: transparent;
+  color: var(--color-bg-dark);
+  padding: 12px 40px; /* Reduzido de 48px para 12px */
+}
+
+/* SECTION HEADING */
+.lw-section-title {
+  font-family: var(--font-primary);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--color-bg-dark);
+  line-height: 1;
+  padding: 0 8% 24px;
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centralização equivalente à do Short Content */
+  gap: 0.28em;
+}
+
+/* Curtain clip container — each word slides up from behind this */
+.lw-title-word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.05;
+}
+
+.lw-title-word {
+  display: inline-block;
+}
+
+/* SPLIT LAYOUT WRAPPER (sidebar + content side by side) */
+.lw-split {
+  display: flex;
+  width: 100%;
+}
+
+/* LEFT STICKY SIDEBAR */
+.lw-sidebar {
+  position: sticky;
+  top: 0;
+  width: 35%; /* Ocupa um terço */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinhando para cima */
+  align-items: flex-start; /* Alinhando para esquerda */
+  padding-left: 8%; /* Ajustado para alinhamento uniforme */
+  padding-top: 15vh; /* Respiro no topo similar ao site original */
+  padding-bottom: 22vh; /* Mais espaço para empurrar os títulos para cima */
+  overflow: hidden;
+  z-index: 100;
+}
+
+.lw-background-number {
+  position: relative;
+  font-size: min(15vw, 220px);
+  font-family: var(--font-primary);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #e0e0e0; /* Cinza neutro suave solicitado */
+  opacity: 0.6; /* Mais opacidade pois a cor é bem clarinha */
+  pointer-events: none;
+  z-index: 0;
+  line-height: 0.9;
+  margin-bottom: 16px; /* Margem reduzida para aproximar a roleta */
+  margin-left: -12px;
+}
+
+.lw-nav {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Mais curtos/próximos */
+  align-items: flex-start;
+}
+
+.lw-nav-title {
+  display: none; 
+}
+
+.lw-nav-item {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* Muito menor, como uma verdadeira legenda de apoio */
+  font-weight: 500; 
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Mais ajustado */
+  color: rgba(0, 0, 0, 0.2); 
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  font-family: var(--font-primary);
+}
+
+.lw-nav-item.active {
+  color: var(--color-bg-dark); 
+  transform: translateX(8px); /* Efeito mais sutil de deslocamento */
+}
+
+.lw-dash {
+  display: inline-block;
+  width: 14px; /* Traço curto */
+  height: 1px; /* Traço delicado para não destoar */
+  background-color: currentColor; 
+}
+
+/* LEFT SIDEBAR ACTIVE INFO (NEW TITLE & SUBTITLE) */
+.lw-active-details {
+  margin-top: auto; /* Empurra os detalhes para a parte inferior da barra lateral */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lw-active-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-bg-dark);
+  margin: 0 0 8px 0;
+  font-family: var(--font-primary);
+  line-height: 1.1;
+}
+
+.lw-active-subtitle {
+  font-family: var(--font-primary);
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 400;
+}
+
+/* RIGHT SCROLLING CONTENT */
+.lw-content {
+  width: 65%;
+  padding: 2vh 0 2vh 4%; /* Reduzido de 10vh para 2vh */
+}
+
+.lw-project-section {
+  min-height: 70vh; /* Ajustado para acompanhar as imagens 16:9 - Menos vácuo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12vh; /* Reduzido de 20vh para mais densidade */
+}
+
+.lw-project-section:last-child {
+  margin-bottom: 12vh; /* Aumentado um pouco para o último vídeo subir e alinhar, mas não exagerar */
+}
+
+.lw-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Reusing some visual aesthetics from original Parallax Cards */
+.lw-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9; /* Aspecto mais cinematográfico */
+  border-radius: 24px; /* Cantos mais suaves e modernos */
+  overflow: hidden;
+  position: relative;
+  background-color: #eee;
+  cursor: pointer;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08); /* Sombra suave para o fundo claro */
+}
+
+.lw-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  border-radius: 24px;
+}
+
+/* Mobile Fallback: Turn off split scroll */
+@media (max-width: 900px) {
+  .latest-works {
+    flex-direction: column;
+  }
+  .lw-sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 80px 24px 40px;
+    border-right: none;
+  }
+  .lw-content {
+    width: 100%;
+    padding: 40px 24px;
+  }
+  .lw-project-section {
+    min-height: auto;
+    margin-bottom: 80px;
+  }
+  .lw-nav-item {
+    font-size: 1.5rem;
+  }
+}

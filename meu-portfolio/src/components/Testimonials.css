@@ -1,0 +1,239 @@
+.testimonials-section {
+  width: 100%;
+  margin: 0;
+  padding: 0 4%;
+}
+
+.testi-island {
+  position: relative;
+  background-color: #ffffff; /* Branco puro agora para contrastar com o fundo do site */
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 4%;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.05); /* Sombra elegante para dar elevação ao bloco branco */
+  border: 1px solid rgba(0, 0, 0, 0.03); /* Linha de contorno quase invisível pro acabamento */
+}
+
+/* ====================================
+   Header & Estrelas
+   ==================================== */
+.testi-header {
+  text-align: center;
+  margin-bottom: 40px; /* Reduzido de 60px para aproximar dos cards de valor */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.testi-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background-color: #000000;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.testi-badge:hover {
+  transform: translateY(-2px);
+}
+
+.stars-row {
+  display: flex;
+  gap: 2px;
+  color: #ffffff;
+}
+
+.badge-text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.testi-main-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 6vw, 6rem); /* Ligeiro ajuste na escala pra não "gritar" tanto */
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #000000;
+  margin: 0;
+  line-height: 1.05;
+  text-transform: none;
+}
+
+/* ====================================
+   Value Cards (Social Proof Row)
+   ==================================== */
+.value-cards-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Mais apertado pra parecer um conjunto único */
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 50px; /* Reduzido de 80px */
+  flex-wrap: wrap;
+}
+
+.value-card {
+  background-color: #000000;
+  border-radius: 16px; /* Bordas um pouco menos bruscas */
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 220px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.value-text {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* ====================================
+   Master Testimonial Card (Carousel)
+   ==================================== */
+.testi-master-card {
+  background-color: #000000;
+  width: 100%;
+  max-width: 1100px; /* Levemente mais estreito pra concentrar o texto */
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15); 
+  padding: 80px 60px; /* Reduzi o padding vertical de 100px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testi-quote-wrapper {
+  min-height: 200px; /* Reduzi pra não sobrar tanto "ar" se o texto for curto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.testi-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px; /* Reduzido de 48px para grudar o autor no texto */
+  text-align: center;
+}
+
+/* Padronizado com o estilo Inter do site */
+.testi-text {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.6rem); /* Escala mais equilibrada */
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.testi-author-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.author-name {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.author-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ====================================
+   Dots Navigation (Pilulas)
+   ==================================== */
+.testi-dots-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px; /* Reduzido de 60px */
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.testi-dot:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.testi-dot.active {
+  width: 40px; 
+  background-color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .testi-island {
+    padding: 60px 20px;
+  }
+  .testi-master-card {
+    padding: 60px 20px;
+  }
+  .value-cards-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .value-card {
+    width: 100%;
+    min-width: unset;
+  }
+}

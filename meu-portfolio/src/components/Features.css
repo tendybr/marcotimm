@@ -1,0 +1,108 @@
+.features-section {
+  margin-top: -5vh; /* Menos "puxão" para cima, adicionando mais espaço em branco acima */
+  padding: 0px 40px 120px 40px; /* Topo zerado para ficar totalmente colado no respiro da seção anterior */
+  background-color: transparent;
+  color: var(--color-text-dark);
+  position: relative;
+  z-index: 10;
+}
+
+.features-header {
+  margin-bottom: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.features-section-title {
+  font-family: var(--font-primary);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--color-bg-dark); /* Segue exatamente a mesma cor do Selected Works */
+  line-height: 1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.28em;
+  flex-wrap: wrap; /* Ajuda a não quebrar de forma feia no celular */
+}
+
+/* Container do Efeito de Cortina das Palavras */
+.features-title-word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.05;
+}
+
+.features-title-word {
+  display: inline-block;
+}
+
+.features-subtitle {
+  color: rgba(0,0,0,0.6);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5vw; /* Fresta extremamente fina entre eles, quase imperceptível */
+  max-width: 100%; /* Força a ir de um canto a outro matematicamente */
+  margin: 0 auto; 
+  padding: 0; /* Zero de respiro nas extremidades laterais, vídeos gigantes na tela toda */
+}
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.short-card {
+  background-color: var(--color-bg-dark);
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18); /* Sombras mais encorpadas como você pediu */
+}
+
+.short-card:hover {
+  transform: translateY(-20px) scale(1.02); /* Escala extra para realçar ao hover */
+  box-shadow: 0 35px 70px rgba(0,0,0,0.3);
+}
+
+.short-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.short-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111 0%, #222 100%); /* Fundo escuro premium */
+  color: rgba(255,255,255,0.2);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.short-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* A mágica pra todo vídeo 9:16 preencher a caixa inteira sem distorcer as bordas */
+}
